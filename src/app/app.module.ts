@@ -14,13 +14,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from "@angular/material/input";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
-import { RouterModule, Routes } from '@angular/router';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-
-const appRoutes: Routes = [
-  { path: '', component: MasterListComponent },
-  { path: 'detail', component: ProductDetailComponent }
-];
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -30,10 +26,6 @@ const appRoutes: Routes = [
     ProductDetailComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true} // <-- debugging purposes only
-    ),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -45,7 +37,9 @@ const appRoutes: Routes = [
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
